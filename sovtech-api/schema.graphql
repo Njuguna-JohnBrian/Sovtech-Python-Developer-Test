@@ -1,0 +1,31 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Person {
+    name: String!
+    height: String
+    mass: String
+    gender: String
+    homeworld: String
+}
+
+type People {
+    count: Int!
+    next: Int
+    previous: Int
+    results: [Person]
+}
+
+type JWT {
+    token: String!
+}
+
+type Query {
+    getPeople(page: Int!, search: String): People
+}
+
+type Mutation {
+    authenticate(username: String!): JWT!
+}

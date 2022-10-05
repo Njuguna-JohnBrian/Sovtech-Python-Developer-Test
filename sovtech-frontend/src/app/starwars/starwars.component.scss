@@ -1,0 +1,16 @@
+:host ::ng-deep b {
+  display: block
+}
+
+:host ::ng-deep .p-card-body {
+  padding: 2rem;
+}
+
+.card {
+  background: whitesmoke;
+  height: 60vh;
+  width: 80vw;
+  margin: 1rem auto 0;
+  margin-top: 5vh;
+}
+

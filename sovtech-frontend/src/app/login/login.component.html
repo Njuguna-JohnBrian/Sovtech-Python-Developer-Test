@@ -1,0 +1,37 @@
+<div class="card border-round">
+  <p-card>
+    <div>
+      <h2>Welcome</h2>
+      <h3 class="font-semibold">Please provide your username to proceed</h3>
+    </div>
+    <form [formGroup]="usernameForm" (ngSubmit)="onSubmit()">
+      <!--Username-->
+      <div class="col-12 md:col-12">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+          <input
+            type="text"
+            pInputText
+            placeholder="Username"
+            formControlName="username"
+          />
+        </div>
+        <small
+          *ngIf="usernameForm.get('username')?.errors?.['required'] && usernameForm.get('username')?.touched"
+          class="p-error"
+          >Username is required
+        </small>
+      </div>
+      <!--Button-->
+      <div class="pt-6" style="padding-left: 8rem">
+        <button
+          class="p-button-sm"
+          pButton
+          label="Submit"
+          type="submit"
+          [loading]="isLoading"
+        ></button>
+      </div>
+    </form>
+  </p-card>
+</div>
