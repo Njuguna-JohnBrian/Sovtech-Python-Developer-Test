@@ -166,8 +166,6 @@ To run tests, run the following commands:
 
     [Frontend On AWS S3 Bucket](http://sovtech-frontend.s3-website-us-east-1.amazonaws.com/)
 
-
-
     [Backend On Heroku](https://sovtech-graphql.herokuapp.com/graphql)
 
 ## Screenshots
