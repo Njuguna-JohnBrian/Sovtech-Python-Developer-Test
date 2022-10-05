@@ -41,10 +41,10 @@ authenticate Mutation ( token ) passed along, in the headers with each request.
 ```
 
 #### Graphql
+- AUTH MUTATION
 
 ```https
   POST /graphql
-  AUTH MUTATION
 ```
 
 
