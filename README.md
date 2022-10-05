@@ -36,7 +36,7 @@ authenticate Mutation ( token ) passed along, in the headers with each request.
 ```
 
 #### Health Check
-```http
+```https
   GET /health
 ```
 
@@ -63,10 +63,10 @@ authenticate Mutation ( token ) passed along, in the headers with each request.
 
 ```
 
+- GET PEOPLE QUERY
 
 ```https
   POST /graphql
-  GET PEOPLE QUERY
 ```
 
 
