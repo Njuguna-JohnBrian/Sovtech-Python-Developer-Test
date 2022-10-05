@@ -53,6 +53,16 @@ authenticate Mutation ( token ) passed along, in the headers with each request.
 | `username`      | `string` | **Required**.|
 | Returns a Bearer Token as ``token``
 
+- Sample
+```go
+    mutation auth{
+  authenticate(username:"john"){
+    token
+  }
+}
+
+```
+
 
 ```https
   POST /graphql
@@ -68,8 +78,20 @@ authenticate Mutation ( token ) passed along, in the headers with each request.
    | `previous`, `count` and 
    `results{name, height,mass,homeworld,gender}`
 
-
-
+- Sample
+```go
+    query getPeople{
+  getPeople(page:1, search:"Luke"){
+    next
+    previous
+    count
+    results{name,height,mass,homeworld,gender}
+  }
+}
+{
+}
+"Authorization":"Bearer <Bearer Token>"
+```
 ## Sovtech-API Environment Variables
 
 To run this service, you will need to add the following environment variable to your .env file
