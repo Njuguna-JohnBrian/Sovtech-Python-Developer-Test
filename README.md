@@ -169,7 +169,16 @@ To run tests, run the following commands:
 
 
     [Backend On Heroku](https://sovtech-graphql.herokuapp.com/graphql)
-## Authors
+
+## Screenshots
+
+### Username Screen
+<img src="./demo/username.png">
+
+### Query Screen
+<img src="./demo/query.png">
+
+## Author
 
 - [@Njuguna John Brian Ngugi](https://github.com/Njuguna-JohnBrian)
 
