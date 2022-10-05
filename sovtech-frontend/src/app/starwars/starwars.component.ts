@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StarwarsService } from '../services/starwars.service';
 import { Person, Results } from '../../models/people.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Router} from "@angular/router";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-starwars',
@@ -19,7 +21,9 @@ export class StarwarsComponent implements OnInit {
 
   constructor(
     private starwarsService: StarwarsService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router:Router,
+    private authService:AuthService
   ) {
     this.starWarForm = this.formBuilder.group({
       search: ['', Validators.required],
@@ -27,7 +31,11 @@ export class StarwarsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.authService.getToken() === null){
+      this.router.navigate([''])
+    }
     this.getPeople();
+
   }
 
   nextPage(): void {
@@ -42,7 +50,12 @@ export class StarwarsComponent implements OnInit {
 
   resetPage(): void {
     this.page = 1;
+    this.starWarForm.reset()
     this.getPeople();
+  }
+  logout(){
+    localStorage.clear()
+    this.router.navigate([''])
   }
 
   getPeople() {

@@ -1,37 +1,14 @@
-<div class="card">
-  <h5 class="font-bold">Star Wars</h5>
-  <div class="mb-3">
-    <p-button
-      type="button"
-      icon="pi pi-chevron-left"
-      (click)="previousPage()"
-      [disabled]="true"
-      styleClass="p-button-text"
-    ></p-button>
-    <p-button
-      type="button"
-      icon="pi pi-refresh"
-      (click)="resetPage()"
-      styleClass="p-button-text"
-    ></p-button>
-    <p-button
-      type="button"
-      icon="pi pi-chevron-right"
-      (click)="nextPage()"
-      [disabled]="true"
-      styleClass="p-button-text"
-    ></p-button>
-    <form [formGroup]="starWarForm" (ngSubmit)="getPeople()" style="float:right">
+  <div class="pt-4" style="padding-left:25rem">
+    <form [formGroup]="starWarForm" (ngSubmit)="getPeople()">
       <input type="text" pInputText formControlName="search" placeholder="Search By Username"/>
       <button type="submit" pButton label="Submit" class="p-button-sm"></button>
+      <button  pButton (click)="logout()" label="Logout" class="p-button-sm" style="margin-left: 10rem"></button>
     </form>
   </div>
 
+<div class="card">
   <p-table
     [value]="people"
-    [paginator]="true"
-    [rows]="3"
-    [showCurrentPageReport]="true"
     responsiveLayout="scroll"
   >
     <ng-template pTemplate="header">
@@ -53,4 +30,10 @@
       </tr>
     </ng-template>
   </p-table>
+  <h2 style="padding-left:20rem" *ngIf="people.length == 0">NO CONTENT</h2>
+  <div style="display:flex;flex-direction: row;justify-content: space-between">
+    <button (click)="previousPage()" pButton label="Previous" class="p-button-sm"></button>
+     <button (click)="resetPage()" pButton label="Reset" class="p-button-sm"></button>
+     <button (click)="nextPage()" pButton label="Next" class="p-button-sm"></button>
+  </div>
 </div>

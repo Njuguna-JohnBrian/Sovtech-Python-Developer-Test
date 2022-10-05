@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements  OnInit{
   isLoading: boolean = false;
   usernameForm: FormGroup;
   constructor(
@@ -20,6 +20,11 @@ export class LoginComponent {
     this.usernameForm = this.formBuilder.group({
       username: ['', Validators.required],
     });
+  }
+  ngOnInit() {
+    if(this.auth.getToken() != null){
+      this.router.navigate(['/fetch'])
+    }
   }
 
   onSubmit() {
