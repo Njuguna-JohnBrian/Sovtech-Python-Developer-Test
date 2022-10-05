@@ -173,10 +173,10 @@ To run tests, run the following commands:
 ## Screenshots
 
 ### Username Screen
-<img src="./demo/username.png">
+<img src="./demo/username.png" width="100vw" height="100vh">
 
 ### Query Screen
-<img src="./demo/query.png">
+<img src="./demo/query.png" width="100vw" height="100vh">
 
 ## Author
 
